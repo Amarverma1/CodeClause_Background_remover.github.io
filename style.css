@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&family=El+Messiri:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+body {
+  background-color: #222;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Wave effect */
+
+
+body {
+  margin: auto;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow: auto;
+  background: linear-gradient(315deg, rgb(63, 4, 158) 3%, rgb(55, 143, 231) 38%, rgb(116, 182, 35) 68%, rgb(214, 20, 20) 98%);
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+  background-attachment: fixed;
+}
+
+@keyframes gradient {
+  0% {
+      background-position: 0% 0%;
+  }
+  50% {
+      background-position: 100% 100%;
+  }
+  100% {
+      background-position: 0% 0%;
+  }
+}
+
+
+.wave {
+  background: rgb(255 255 255 / 25%);
+  border-radius: 1000% 1000% 0 0;
+  position: fixed;
+  width: 200%;
+  height: 12em;
+  animation: wave 10s -3s linear infinite;
+  transform: translate3d(0, 0, 0);
+  opacity: 0.8;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+  bottom: -1.25em;
+  animation: wave 18s linear reverse infinite;
+  opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+  bottom: -2.5em;
+  animation: wave 20s -1s reverse infinite;
+  opacity: 0.9;
+}
+
+@keyframes wave {
+  2% {
+      transform: translateX(1);
+  }
+
+  25% {
+      transform: translateX(-25%);
+  }
+
+  50% {
+      transform: translateX(-50%);
+  }
+
+  75% {
+      transform: translateX(-25%);
+  }
+
+  100% {
+      transform: translateX(1);
+  }
+}
+
+/* CONTAINER */
+.container {
+  max-width: 550px;
+}
+.container h1 {
+  color: #eee;
+  text-align: center;
+  text-transform: capitalize;
+}
+.container h1 span:first-child {
+  color: #ffa74a;
+}
+.container h1 span:nth-of-type(2) {
+  
+  color: #42a3ff;
+}
+.container h1 span:last-child {
+  color: #ec91e8;
+}
+
+/* CARD */
+.container .card {
+  max-width: 90%;
+  margin: auto;
+  margin-top: 30px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 3px solid #555;
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.4);
+  padding: 20px 40px;
+  border-radius: 10px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  backdrop-filter: blur(15px);
+
+
+
+}
+#addCard {
+  border-style: dashed;
+}
+.container .card button {
+  border: none;
+  outline: none;
+  position: relative;
+  background-color: #42a3ff;
+  padding: 10px 60px;
+
+  background-image:   
+    linear-gradient(180deg, 
+      var(--clr2) var(--gradgap), 
+      transparent calc(100% - var(--gradgap))
+    );
+
+  border-radius: 5px;
+  font-size: 15px;
+  color: white;
+  transition: 0.3s;
+  box-shadow: 0px 5px 0px 0px #3975ae;
+  cursor: pointer;
+}
+.container .card button:active {
+  box-shadow: 0px 0px 0px 0px #216aae;
+  transform: translateY(5px);
+}
+.container button#uploadAnother {
+  background-color: brown;
+  padding: 10px 30px;
+  box-shadow: 0px 5px 0px 0px rgb(102, 19, 19);
+}
+.container button#uploadAnother:active {
+  box-shadow: 0px 0px 0px 0px rgb(102, 19, 19);
+  transform: translateY(5px);
+}
+.container .card button input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  cursor: pointer;
+}
+.container .card p {
+  color: white;
+  font-size: 14px;
+  opacity: 0.7;
+  text-align: center;
+  margin-top: 20px;
+}
+.container #displayCard img {
+  max-height: 100%;
+  width: auto;
+  border-radius: 5px;
+  z-index: 1;
+}
+.container .image-cont {
+  border-radius: 5px;
+  padding: 10px;
+  max-height: 90%;
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.container #downloadCard .image-cont {
+  padding: 0px;
+  width: fit-content;
+  background-image: url("https://thumbs.dreamstime.com/b/transparent-designer-must-have-fake-background-39672616.jpg");
+  background-size: contain;
+}
+.container #downloadCard .image-after {
+  max-height: 100%;
+  width: auto;
+  border-radius: 5px;
+  z-index: 1;
+}
+.container #downloadCard .image-before {
+  max-width: 20%;
+  height: auto;
+  border-radius: 5px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+}
+
+/* LOADER */
+.loader {
+  --ballcolor: #f2f2f2;
+  --shadow: 0px 0 #ffffff00;
+  --shadowcolor: #ffffff00;
+  width: 10px;
+  height: 10px;
+  left: -120px;
+  border-radius: 50%;
+  position: relative;
+  color: var(--ballcolor);
+  animation: shadowRolling 2s linear infinite;
+}
+
+@keyframes shadowRolling {
+  0% {
+    box-shadow: var(--shadow), var(--shadow), var(--shadow), var(--shadow);
+  }
+
+  12% {
+    box-shadow: 100px 0 var(--ballcolor), var(--shadow), var(--shadow),
+      var(--shadow);
+  }
+
+  25% {
+    box-shadow: 110px 0 var(--ballcolor), 100px 0 var(--ballcolor),
+      var(--shadow), var(--shadow);
+  }
+
+  36% {
+    box-shadow: 120px 0 var(--ballcolor), 110px 0 var(--ballcolor),
+      100px 0 var(--ballcolor), var(--shadow);
+  }
+
+  50% {
+    box-shadow: 130px 0 var(--ballcolor), 120px 0 var(--ballcolor),
+      110px 0 var(--ballcolor), 100px 0 var(--ballcolor);
+  }
+
+  62% {
+    box-shadow: 200px 0 var(--shadowcolor), 130px 0 var(--ballcolor),
+      120px 0 var(--ballcolor), 110px 0 var(--ballcolor);
+  }
+
+  75% {
+    box-shadow: 200px 0 var(--shadowcolor), 200px 0 var(--shadowcolor),
+      130px 0 var(--ballcolor), 120px 0 var(--ballcolor);
+  }
+
+  87% {
+    box-shadow: 200px 0 var(--shadowcolor), 200px 0 var(--shadowcolor),
+      200px 0 var(--shadowcolor), 130px 0 var(--ballcolor);
+  }
+
+  100% {
+    box-shadow: 200px 0 var(--shadowcolor), 200px 0 var(--shadowcolor),
+      200px 0 var(--shadowcolor), 200px 0 var(--shadowcolor);
+  }
+}
+
+
